@@ -16,8 +16,8 @@ Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQ
 ## WBS
 ```mermaid
 gantt
-    title 프로젝트 일정
-    dateFormat  YYYY-MM-DD
+  title 프로젝트 일정
+  dateFormat  YYYY-MM-DD
 	프로젝트 아이디어 기획: 2024-08-17, 2024-08-21
 	CRUD 구현: 2024-08-17, 2024-08-26
 	리포지토리 생성: 2024-08-26, 2024-08-26
