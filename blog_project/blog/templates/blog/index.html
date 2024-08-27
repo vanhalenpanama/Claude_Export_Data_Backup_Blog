@@ -2,7 +2,6 @@
 
 {% block content %}
 <h2>Welcome to the Blog</h2>
-테스트 계정 : test / !test1234
 {% if user.is_authenticated %}
 <a href="{% url 'post_list' %}" class="btn">블로그 입장하기</a>
 {% else %}
