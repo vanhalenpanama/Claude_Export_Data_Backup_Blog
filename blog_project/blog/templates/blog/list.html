@@ -6,7 +6,7 @@
         <h2 class="main-title">My BLOG</h2>
         <p class="main-description"></p>
         {% comment %} 검색 기능 {% endcomment %}
-        <p><strong>{{ posts.count }}개</strong>의 게시글이 있습니다.</p>
+        {% comment %} <p><strong>{{ posts.count }}개</strong>의 게시글이 있습니다.</p> {% endcomment %}
             <form method="get">
                 <select name="category">
                     <option value="전체" {% if current_category == '전체' %}selected{% endif %}>카테고리 전체</option>
