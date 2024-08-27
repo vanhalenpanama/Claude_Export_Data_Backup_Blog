@@ -34,4 +34,14 @@ Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQ
 |      | profile/update/           | profile_update       | 프로필 수정        | 
 |      | comment/<int:pk>/update/  | comment_update       | 댓글 수정          |
 |      | comment/<int:pk>/delete/  | comment_delete       | 댓글 삭제          |
-|      | sort-posts/               | sort_posts           | 검색 시 정렬       |   
+|      | sort-posts/               | sort_posts           | 검색 시 정렬       | 
+
+- claude
+
+| claude | URL pattern      | Name       | 기능                            |
+|--------|------------------|------------|---------------------------------|
+|        | ' '              | home       | claude 페이지 인덱스             |
+|        | upload/          | register   | conversations.json 업로드        |
+|        | list/            | login      | claude 대화 목록                 |  
+|        | detail/<int:pk>/ | post_list  | claude 대화 목록 상세 페이지      | 
+|        | delete-all/      | write_post | 저장된 claude 대화 목록 전체 삭제 |
