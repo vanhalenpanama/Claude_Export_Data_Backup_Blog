@@ -51,10 +51,10 @@ gantt
 
 - claude
 
-| claude | URL pattern      | Name       | 기능                            |
-|--------|------------------|------------|---------------------------------|
-|        | ' '              | home       | claude 페이지 인덱스             |
-|        | upload/          | register   | conversations.json 업로드        |
-|        | list/            | login      | claude 대화 목록                 |  
-|        | detail/<int:pk>/ | post_list  | claude 대화 목록 상세 페이지      | 
-|        | delete-all/      | write_post | 저장된 claude 대화 목록 전체 삭제 |
+| claude | URL pattern      | Name        | 기능                            |
+|--------|------------------|-------------|---------------------------------|
+|        | ' '              | home        | claude 페이지 인덱스             |
+|        | upload/          | upload_json | conversations.json 업로드        |
+|        | list/            | list_entries| claude 대화 목록                 |  
+|        | detail/<int:pk>/ | detail_entry| claude 대화 목록 상세 페이지      | 
+|        | delete-all/      | delete_all  | 저장된 claude 대화 목록 전체 삭제 |
