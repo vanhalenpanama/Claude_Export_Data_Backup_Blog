@@ -35,7 +35,7 @@ class PostListView(ListView):
     template_name = 'blog/list.html'
     context_object_name = 'posts'
     ordering = ['-created_at']
-    paginate_by = 2  # 페이지당 10개의 게시글
+    paginate_by = 2  # 페이지당 n개의 게시글
 
     def get_queryset(self):
         queryset = super().get_queryset()

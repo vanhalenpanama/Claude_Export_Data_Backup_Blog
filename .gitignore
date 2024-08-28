@@ -27,7 +27,7 @@ env/
 *.static
 
 # Media files (if you have a separate media folder)
-# media/
+media/
 
 # IDE configurations
 .vscode/
@@ -38,3 +38,4 @@ env/
 *.egg-info/
 dist/
 build/
+README.md
