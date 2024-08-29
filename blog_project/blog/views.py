@@ -202,16 +202,3 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return reverse_lazy('post_detail', kwargs={'pk': self.object.post.pk})    
     
 
-def sort_posts(request):
-    order = request.GET.get('order', '-created_at')
-    posts = Post.objects.all().order_by(order)
-    data = [{
-        'id': post.id,
-        'title': post.title,
-        'author': post.author.username,
-        'created_at': post.created_at.strftime('%Y-%m-%d %H:%M:%S'),
-        'views': post.views,
-        'category': post.category.name if post.category else 'No Category',
-        'url': reverse('post_detail', kwargs={'pk': post.pk})
-    } for post in posts]
-    return JsonResponse(data, safe=False)    

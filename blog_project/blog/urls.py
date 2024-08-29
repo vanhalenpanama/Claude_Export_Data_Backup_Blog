@@ -1,6 +1,5 @@
-from django.urls import path
 from .views import *
-
+from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -16,7 +15,6 @@ urlpatterns = [
     path('blog/delete/<int:pk>/', PostDeleteView.as_view(), name='delete_post'),
     path('comment/<int:pk>/update/', CommentUpdateView.as_view(), name='comment_update'),
     path('comment/<int:pk>/delete/', CommentDeleteView.as_view(), name='comment_delete'),
-    path('sort-posts/', sort_posts, name='sort_posts'),
 ]
 
 if settings.DEBUG:
