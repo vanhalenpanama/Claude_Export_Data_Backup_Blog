@@ -1,34 +1,20 @@
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.contrib.auth.views import LoginView,PasswordChangeView
-from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
 from django.urls import reverse_lazy,reverse
 from django.shortcuts import redirect, get_object_or_404
 from django.db.models import Q, F
 from .models import Post, Category, Comment
-from .forms import PostForm, CommentForm, UserProfileForm
-
+from .forms import PostForm, CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import ValidationError
 from django.http import JsonResponse
 
 import logging
-from django.core.files.uploadedfile import InMemoryUploadedFile
+
 
 class HomeView(TemplateView):
     template_name = 'blog/index.html'
 
-
-# 20240827 수정
-from .forms import CustomUserCreationForm
-class RegisterView(CreateView):
-    form_class = CustomUserCreationForm
-    success_url = reverse_lazy('home')
-    template_name = 'blog/join.html'
-
-class UserLoginView(LoginView):
-    template_name = 'blog/login.html'
 
 class PostListView(ListView):
     model = Post
@@ -191,32 +177,6 @@ class PostSearchView(ListView):
         context['tag'] = self.kwargs.get('tag')
         return context
 
-# 0826 추가
-    
-class UserPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
-    form_class = PasswordChangeForm
-    success_url = reverse_lazy('password_change_done')
-    template_name = 'blog/password_change.html'
-
-class UserPasswordChangeDoneView(LoginRequiredMixin, TemplateView):
-    template_name = 'blog/password_change_done.html'
-
-class UserProfileUpdateView(LoginRequiredMixin, UpdateView):
-    model = User
-    form_class = UserProfileForm
-    template_name = 'blog/profile_update.html'
-    success_url = reverse_lazy('profile')
-
-    def get_object(self, queryset=None):
-        return self.request.user
-
-class UserProfileView(LoginRequiredMixin, DetailView):
-    model = User
-    template_name = 'blog/profile.html'
-    context_object_name = 'user'
-
-    def get_object(self, queryset=None):
-        return self.request.user
 
 class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Comment

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Blog{% endblock %}</title>
+    <title>My Blog</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -17,14 +17,14 @@
                 {% if not 'default' in user.groups.all|stringformat:'s' %}
                 <a href="{% url 'claude:home' %}" class="nav-link">Claude</a>
                 {% endif %}  
-                <a href="{% url 'profile' %}" class="nav-link">Profile</a>
+                <a href="{% url 'account:profile' %}" class="nav-link">Profile</a>
                 <form method="post" action="{% url 'logout' %}" class="logout-form">
                     {% csrf_token %}
                     <button type="submit" class="logout-button">Logout</button>
                 </form>
                 {% else %}
-                    <a href="{% url 'login' %}" class="nav-link">Login</a>
-                    <a href="{% url 'register' %}" class="nav-link">Sign Up</a>
+                    <a href="{% url 'account:login' %}" class="nav-link">Login</a>
+                    <a href="{% url 'account:register' %}" class="nav-link">Sign Up</a>
                 {% endif %}
             </nav>
         </div>

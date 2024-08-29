@@ -7,7 +7,7 @@
 <p>이름: {{ user.first_name }} {{ user.last_name }}</p>
 <p>닉네임: {{ user.userprofile.nickname }}</p>
 {% if not 'test' in user.groups.all|stringformat:'s' %}
-<a href="{% url 'profile_update' %}">프로필 수정</a>
-<a href="{% url 'password_change' %}">비밀번호 변경</a>
+<a href="{% url 'account:profile_update' %}">프로필 수정</a>
+<a href="{% url 'account:password_change' %}">비밀번호 변경</a>
 {% endif %}  
 {% endblock %}
