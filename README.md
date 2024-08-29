@@ -33,21 +33,14 @@ gantt
 | blog | URL pattern               | Name                 | 기능              |
 |------|---------------------------|----------------------|-------------------|
 |      | ' '                       | home                 | 메인 페이지        |
-|      | register/                 | register             | 회원 가입          |
-|      | login/                    | login                | 로그인            | 
 |      | blog/                     | post_list            | 게시글 목록        | 
 |      | blog/write/               | write_post           | 게시글 작성        | 
 |      | blog/<int:pk>/            | post_detail          | 게시글 디테일 페이지  |  
 |      | blog/search/<str:tag>/    | search_posts         | 게시글 검색        | 
 |      | blog/edit/<int:pk>/       | edit_post            | 게시글 수정        | 
 |      | blog/delete/<int:pk>/     | delete_post          | 게시글 삭제        | 
-|      | password_change/          | password_change      | 비밀번호 변경       | 
-|      | password_change/done/     | password_change_done | 비밀번호 변경 완료   | 
-|      | profile/                  | profile              | 프로필 페이지       | 
-|      | profile/update/           | profile_update       | 프로필 수정        | 
 |      | comment/<int:pk>/update/  | comment_update       | 댓글 수정          |
 |      | comment/<int:pk>/delete/  | comment_delete       | 댓글 삭제          |
-|      | sort-posts/               | sort_posts           | 검색 시 정렬       | 
 
 - claude
 
@@ -58,3 +51,15 @@ gantt
 |        | list/            | list_entries| claude 대화 목록                 |  
 |        | detail/<int:pk>/ | detail_entry| claude 대화 목록 상세 페이지      | 
 |        | delete-all/      | delete_all  | 저장된 claude 대화 목록 전체 삭제 |
+
+- account
+
+| account | URL pattern           | Name                 | 기능            |
+|---------|-----------------------|----------------------|----------------|
+|         | register/             | register             | 회원 가입         |
+|         | login/                | login                | 로그인           | 
+|         | password_change/      | password_change      | 비밀번호 변경      | 
+|         | password_change/done/ | password_change_done | 비밀번호 변경 완료  | 
+|         | profile/              | profile              | 프로필 페이지      | 
+|         | profile/update/       | profile_update       | 프로필 수정       |
+
