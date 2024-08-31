@@ -65,6 +65,8 @@ gantt
 
 
 
+## ERD
 
+![ERD](./blog_project/media/ERD.png)
 
 
