@@ -63,8 +63,3 @@ gantt
 |         | profile/              | profile              | 프로필 페이지      | 
 |         | profile/update/       | profile_update       | 프로필 수정       |
 
-
-
-
-
-
