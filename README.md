@@ -15,9 +15,9 @@ Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQ
   
 ### Render를 선택한 이유
 
- 1.무료로 이용 가능하고 이용 기간 제한이 없음
+ 1. 무료로 이용 가능하고 이용 기간 제한이 없음
 
- 2.PostgresSQL을 무료로 이용 가능
+ 2. PostgresSQL을 무료로 이용 가능
 
 
 ## WBS
@@ -33,7 +33,41 @@ gantt
 	문서 작업: 2024-08-27, 2024-08-30
 ```
 
-## URL 구조
+## 구현한 기능
+
+`<account>`
+
+- 사용자의 별명을 저장
+- 비밀번호 변경 기능
+- 사용자 프로필 조회/업데이트 기능
+- LoginRequiredMixin을 사용하여 로그인한 사용자만 접근 가능
+- 사용자 계정이 생성될 때 'default'그룹에 포함시키고 기본 프로필을 자동으로 생성
+
+`<blog>`
+
+- 블로그 포스트에 제목, 내용, 작성자, 생성 및 수정 시간, 카테고리, 이미지, 조회수 등의 정보를 포함
+- 댓글과 대댓글을 계층적 구조로 구현
+- 페이지 기능
+- 카테고리별 필터링
+- 제목 검색 기능
+- 작성일 기준으로 최신순, 오래된 순으로 포스트 정렬
+
+`<claude>`
+
+- Claude AI와의 대화 기록을 저장
+- 업로드된 대화 기록 목록을 표시
+- 페이지 기능
+- UUID, 제목, 생성 및 수정 시간, 대화 메시지 등의 정보를 가독성있게 html로 렌더링
+
+### Django를 통해 구현한 이유
+
+1. Claude JSON의 내용을 DB에 저장하고 대화 내역의 uuid를 비교하여 upsert를 구현
+
+2. Django는 sqlite가 기본 내장되어 간편하게 사용할 수 있어서 타 웹 프레임워크에서 sqlite를 사용하는 경우보다 안정적으로 사용 가능
+
+
+<details>
+<summary><h2> URL 구조 <h2></summary>
 
 - blog
 
@@ -70,7 +104,7 @@ gantt
 |         | profile/              | profile              | 프로필 페이지      | 
 |         | profile/update/       | profile_update       | 프로필 수정       |
 
-
+</details>
 
 ## ERD
 
