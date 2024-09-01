@@ -25,27 +25,3 @@
 {% endfor %}
 
 
-
-{% comment %} 백업 
-{% for comment in comments %}
-    <div class="comment" style="margin-left: {{ comment.level|default:0 }}em;">
-        <p>{{ comment.author.username }}: {{ comment.content }}</p>
-        <small>{{ comment.created_at }}</small>
-        <button onclick="showReplyForm({{ comment.id }})">답글</button>
-        
-        <div id="replyForm{{ comment.id }}" style="display:none;">
-            <form method="post">
-                {% csrf_token %}
-                {{ comment_form }}
-                <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                <button type="submit">답글 작성</button>
-            </form>
-        </div>
-
-        {% with replies=comment.replies.all %}
-            {% if replies %}
-                {% include 'blog/comments.html' with comments=replies %}
-            {% endif %}
-        {% endwith %}
-    </div>
-{% endfor %} {% endcomment %}

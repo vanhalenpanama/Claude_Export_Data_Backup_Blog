@@ -1,10 +1,10 @@
+from .forms import  UserProfileForm, CustomUserCreationForm
 from django.views.generic import TemplateView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView,PasswordChangeView
 from django.contrib.auth.forms import  PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.urls import reverse_lazy
-from .forms import  UserProfileForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -13,15 +13,13 @@ class UserLoginView(LoginView):
     template_name = 'account/login.html'
 
 
-# 20240827 수정
-from .forms import CustomUserCreationForm
+
 class RegisterView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('home')
     template_name = 'account/join.html'
     
 
-# 0826 추가
     
 class UserPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
     form_class = PasswordChangeForm

@@ -37,15 +37,3 @@
     <p><a href="{% url 'claude:list_entries' %}">Back to List</a></p>
 {% endblock %}
 
-{% comment %} 백업 
-{% extends 'blog/base.html' %}
-
-{% block content %}
-<h1>{{ entry.name }}</h1>
-<p>UUID: {{ entry.uuid }}</p>
-<p>Created at: {{ entry.created_at }}</p>
-<p>Updated at: {{ entry.updated_at }}</p>
-<h2>Chat Messages</h2>
-<pre>{{ entry.chat_messages|pprint }}</pre>
-{% endblock %} 
-{% endcomment %}

@@ -27,15 +27,15 @@ class UserProfileForm(forms.ModelForm):
     
     def clean_username(self):
         username = self.cleaned_data.get('username')
-        inappropriate_words = ['욕설1', '욕설2', '비속어1', '비속어2']  # Add your list of inappropriate words here
-
+        inappropriate_words = ['욕설1', '욕설2', '비속어1', '비속어2']  
+        
         for word in inappropriate_words:
             if word in username:
                 raise ValidationError("부적절한 단어가 포함되어 있습니다.")
 
         return username        
     
-# 20240827 새로 추가    
+   
 
 from django.contrib.auth.models import Group
 from django.contrib.auth.forms import UserCreationForm
@@ -49,7 +49,6 @@ class CustomUserCreationForm(UserCreationForm):
         user = super().save(commit=False)
         if commit:
             user.save()
-            # 'default' 그룹에 추가
             default_group, created = Group.objects.get_or_create(name='default')
             default_group.user_set.add(user)
         return user

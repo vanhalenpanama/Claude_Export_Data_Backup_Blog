@@ -52,11 +52,6 @@ class PostDetailView(DetailView):
     template_name = 'blog/detail.html'
     context_object_name = 'post'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['comment_form'] = CommentForm()
-    #     context['comments'] = self.object.comments.filter(parent=None)
-    #     return context
     
     def get(self, request, *args, **kwargs):
         response = super().get(request, *args, **kwargs)
@@ -112,8 +107,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         if 'image' in self.request.FILES:
             image_file = self.request.FILES['image']
-            # if isinstance(image_file, InMemoryUploadedFile):
-            #     logger.info(f"이미지 파일 '{image_file.name}'이(가) 업로드되었습니다.")
+            
         return super().form_valid(form)
 
     def clean(self):
@@ -121,7 +115,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         title = cleaned_data.get('title')
         content = cleaned_data.get('content')
 
-        inappropriate_words = ['욕설1', '욕설2', '비속어1', '비속어2']  # Add your list of inappropriate words here
+        inappropriate_words = ['욕설1', '욕설2', '비속어1', '비속어2']  
 
         for word in inappropriate_words:
             if word in title or word in content:
@@ -150,9 +144,6 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('post_list')
-
-    # def get_queryset(self):
-    #     return Post.objects.filter(author=self.request.user)
     
     def test_func(self):
         post = self.get_object()
