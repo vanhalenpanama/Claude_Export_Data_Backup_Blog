@@ -149,4 +149,5 @@ DataEntry 테이블
 ## 후기
 
 - Render에서의 collectstatic 
->>>>>>> 940ec04fbf6457a7d689acf2b7a12465b4933a5d
+
+
