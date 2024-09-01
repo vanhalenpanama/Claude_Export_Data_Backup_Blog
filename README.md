@@ -119,7 +119,6 @@ gantt
 
 <details>
 <summary><h2> 프로젝트 구조 <h2></summary>
-```
 📦blog_project
  ┣ 📂account
  ┃ ┣ 📂templates
@@ -189,7 +188,6 @@ gantt
  ┣ 📜db.sqlite3
  ┣ 📜manage.py
  ┗ 📜requirements.txt
-```
 </details>
 
 
