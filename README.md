@@ -96,12 +96,11 @@ Category 테이블
 
 - 블로그 포스트의 카테고리를 저장합니다.
 
-
-## 후기
-
-- Render에서의 collectstatic 
-
 DataEntry 테이블
 
 - Claude 대화 내역 데이터 백업과 관련된 정보를 저장합니다.
 
+
+## 후기
+
+- Render에서의 collectstatic 
