@@ -2,7 +2,9 @@
 
 ![json](./blog_project/media/export_data5.png)
 
-Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQLite에 저장하고 Django를 통해 열람 가능한 웹 페이지입니다.
+Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQLite에 저장하고 Django를 통해 열람할 수 있는 기능과 블로그 기능을 융합한 웹 페이지입니다.
+
+
 
 ## 배포 URL
 [https://claude-export-data-backup-blog.onrender.com/](https://claude-export-data-backup-blog.onrender.com/)
@@ -23,10 +25,17 @@ Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQ
 ## WBS
 ```mermaid
 gantt
-  title 프로젝트 일정
   dateFormat  YYYY-MM-DD
-	프로젝트 아이디어 기획: 2024-08-17, 2024-08-21
-	CRUD 구현: 2024-08-17, 2024-08-26
+	프로젝트 아이디어 기획: 2024-08-17, 2024-08-21	
+    	메인 페이지: 2024-08-20, 2024-08-21
+	로그인 페이지: 2024-08-20, 2024-08-21
+    	회원가입 페이지: 2024-08-20, 2024-08-21
+    	로그인/로그아웃/유저 인증: 2024-08-20, 2024-08-23
+    	게시글 생성 페이지: 2024-08-21, 2024-08-26
+   	게시글 상세 페이지: 2024-08-21, 2024-08-26
+    	삭제 수정 구현: 2024-08-21, 2024-08-26
+	댓글 구현: 2024-08-21, 2024-08-26
+    	프로필 페이지: 2024-08-25, 22024-08-26
 	리포지토리 생성: 2024-08-26, 2024-08-27
 	Render 배포: 2024-08-27, 2024-08-28
 	URL 구현: 2024-08-27, 2024-08-28
