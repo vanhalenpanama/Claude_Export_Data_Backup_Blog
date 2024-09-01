@@ -117,8 +117,9 @@ gantt
 </details>
 
 
-## 프로젝트 구조
-```
+<details>
+<summary><h2> 프로젝트 구조 <h2></summary>
+  <pre>
 📦blog_project
  ┣ 📂account
  ┃ ┣ 📂templates
@@ -188,7 +189,8 @@ gantt
  ┣ 📜db.sqlite3
  ┣ 📜manage.py
  ┗ 📜requirements.txt
-```
+  </pre>
+</details>
 
 ## ERD
 
