@@ -12,6 +12,13 @@ Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQ
   id : test
   pw : !test1234
   ```
+  
+### Render를 선택한 이유
+
+ 1.무료로 이용 가능하고 이용 기간 제한이 없음
+
+ 2.PostgresSQL을 무료로 이용 가능
+
 
 ## WBS
 ```mermaid
@@ -69,4 +76,32 @@ gantt
 
 ![ERD](./blog_project/media/ERD2.png)
 
+auth_user 테이블
+
+- Django의 기본 인증 시스템에서 제공하는 사용자 정보를 저장하는 테이블입니다.
+
+UserProfile 테이블
+
+- 사용자의 추가적인 정보를 저장합니다.
+
+Post 테이블
+
+- 블로그 포스트에 대한 정보를 저장합니다.
+
+Comment 테이블
+
+- 각 포스트에 대한 댓글을 저장합니다.
+
+Category 테이블
+
+- 블로그 포스트의 카테고리를 저장합니다.
+
+
+## 후기
+
+- Render에서의 collectstatic 
+
+DataEntry 테이블
+
+- Claude 대화 내역 데이터 백업과 관련된 정보를 저장합니다.
 
