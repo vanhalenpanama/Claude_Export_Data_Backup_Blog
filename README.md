@@ -26,7 +26,8 @@ Claude에서 'Export Data'로 다운로드받은 conversations.json 파일을 SQ
 ```mermaid
 gantt
   dateFormat  YYYY-MM-DD
-	프로젝트 아이디어 기획: 2024-08-17, 2024-08-21	
+	프로젝트 아이디어 기획: 2024-08-17, 2024-08-21
+	Claude JSON 저장/삭제 구현: 2024-08-18, 2024-08-20		
     	메인 페이지: 2024-08-20, 2024-08-21
 	로그인 페이지: 2024-08-20, 2024-08-21
     	회원가입 페이지: 2024-08-20, 2024-08-21
@@ -113,9 +114,84 @@ gantt
 |         | profile/              | profile              | 프로필 페이지      | 
 |         | profile/update/       | profile_update       | 프로필 수정       |
 
-<<<<<<< HEAD
-=======
 </details>
+
+
+<details>
+<summary><h2> 프로젝트 구조 <h2></summary>
+```
+📦blog_project
+ ┣ 📂account
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📂account
+ ┃ ┃ ┃ ┣ 📜join.html
+ ┃ ┃ ┃ ┣ 📜login.html
+ ┃ ┃ ┃ ┣ 📜password_change_done.html
+ ┃ ┃ ┃ ┣ 📜password_change.html
+ ┃ ┃ ┃ ┣ 📜profile_update.html
+ ┃ ┃ ┃ ┗ 📜profile.html
+ ┃ ┣ 📜admin.py
+ ┃ ┣ 📜apps.py
+ ┃ ┣ 📜forms.py
+ ┃ ┣ 📜models.py
+ ┃ ┣ 📜tests.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂blog
+ ┃ ┣ 📂static
+ ┃ ┃ ┗ 📂css
+ ┃ ┃ ┃ ┣ 📜styles.css
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📂blog
+ ┃ ┃ ┃ ┣ 📜base.html
+ ┃ ┃ ┃ ┣ 📜comment_confirm_delete.html
+ ┃ ┃ ┃ ┣ 📜comment_update.html
+ ┃ ┃ ┃ ┣ 📜comments.html
+ ┃ ┃ ┃ ┣ 📜detail.html
+ ┃ ┃ ┃ ┣ 📜edit.html
+ ┃ ┃ ┃ ┣ 📜index.html
+ ┃ ┃ ┃ ┗ 📜list.html
+ ┃ ┃ ┃ ┗ 📜write.html
+ ┃ ┣ 📜admin.py
+ ┃ ┣ 📜apps.py
+ ┃ ┣ 📜forms.py
+ ┃ ┣ 📜models.py
+ ┃ ┣ 📜tests.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂claude
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📂claude
+ ┃ ┃ ┃ ┣ 📜detail_entry.html
+ ┃ ┃ ┃ ┣ 📜home.html
+ ┃ ┃ ┃ ┣ 📜list_entries.html
+ ┃ ┃ ┃ ┣ 📜uploade_json.html
+ ┃ ┣ 📜admin.py
+ ┃ ┣ 📜apps.py
+ ┃ ┣ 📜forms.py
+ ┃ ┣ 📜models.py
+ ┃ ┣ 📜tests.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂config
+ ┃ ┣ 📂settings
+ ┃ ┃ ┃ ┣ 📜base.py
+ ┃ ┃ ┃ ┣ 📜development.py
+ ┃ ┃ ┃ ┣ 📜production.py
+ ┃ ┣ 📜asgi.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜wsgi.py
+ ┃ ┗ 📜__init__.py
+ ┣ 📂media
+ ┣ 📜db.sqlite3
+ ┣ 📜manage.py
+ ┗ 📜requirements.txt
+```
+</details>
+
 
 ## ERD
 
